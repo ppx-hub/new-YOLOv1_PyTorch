@@ -98,14 +98,14 @@ Just run ```sh data/scripts/COCO2017.sh```. You will get COCO train2017, val2017
 # Train
 ### VOC
 ```Shell
-python train.py -d voc --cuda -v [select a model] -hr -ms
+python train.py -d voc --cuda -v [select a model] -ms
 ```
 
 You can run ```python train.py -h``` to check all optional argument.
 
 ### COCO
 ```Shell
-python train.py -d coco --cuda -v [select a model] -hr -ms
+python train.py -d coco --cuda -v [select a model] -ms
 ```
 
 
