@@ -116,13 +116,16 @@ class VOCDetection(data.Dataset):
             for line in open(osp.join(rootpath, 'ImageSets', 'Main', name + '.txt')):
                 self.ids.append((rootpath, line.strip()))
 
+
     def __getitem__(self, index):
         im, gt, h, w = self.pull_item(index)
 
         return im, gt
 
+
     def __len__(self):
         return len(self.ids)
+
 
     def pull_item(self, index):
         img_id = self.ids[index]
@@ -234,6 +237,7 @@ class VOCDetection(data.Dataset):
         return torch.from_numpy(img).permute(2, 0, 1), target, height, width
         # return torch.from_numpy(img), target, height, width
 
+
     def pull_image(self, index):
         '''Returns the original image object at index in PIL form
 
@@ -246,7 +250,8 @@ class VOCDetection(data.Dataset):
             PIL img
         '''
         img_id = self.ids[index]
-        return cv2.imread(self._imgpath % img_id, cv2.IMREAD_COLOR)
+        return cv2.imread(self._imgpath % img_id, cv2.IMREAD_COLOR), img_id
+
 
     def pull_anno(self, index):
         '''Returns the original annotation of image at index
@@ -264,6 +269,7 @@ class VOCDetection(data.Dataset):
         anno = ET.parse(self._annopath % img_id).getroot()
         gt = self.target_transform(anno, 1, 1)
         return img_id[1], gt
+
 
 if __name__ == "__main__":
     def base_transform(image, size, mean):
