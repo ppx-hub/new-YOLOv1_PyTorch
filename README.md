@@ -95,49 +95,46 @@ Just run ```sh data/scripts/COCO2017.sh```. You will get COCO train2017, val2017
 - ```data/COCO/test2017/```
 
 
-## Train
+# Train
 ### VOC
 ```Shell
-python train_voc.py -ms --cuda
+python train.py -d voc --cuda -v [select a model] -hr -ms
 ```
 
-```-ms``` means you select multi-scale training trick, else cancel it.
-
-You can run ```python train_voc.py -h``` to check all optional argument.
-
-By default, I set num_workers in pytorch dataloader as 0 to guarantee my multi-scale trick. But the trick can't work when I add more wokers. I know little about multithreading. So sad...
+You can run ```python train.py -h``` to check all optional argument.
 
 ### COCO
 ```Shell
-python train_coco.py -ms --cuda
+python train.py -d coco --cuda -v [select a model] -hr -ms
 ```
+
 
 ## Test
 ### VOC
 ```Shell
-python test_voc.py --trained_model [ Please input the path to model dir. ] --cuda
+python test.py -d voc --cuda -v [select a model] --trained_model [ Please input the path to model dir. ]
 ```
 
 ### COCO
 ```Shell
-python test_coco.py --trained_model [ Please input the path to model dir. ] --cuda
+python test.py -d coco-val --cuda -v [select a model] --trained_model [ Please input the path to model dir. ]
 ```
 
 
 ## Evaluation
 ### VOC
 ```Shell
-python eval_voc.py --train_model [ Please input the path to model dir. ] --cuda
+python eval.py -d voc --cuda -v [select a model] --train_model [ Please input the path to model dir. ]
 ```
 
 ### COCO
 To run on COCO_val:
 ```Shell
-python eval_coco.py --train_model [ Please input the path to model dir. ] --cuda
+python eval.py -d coco-val --cuda -v [select a model] --train_model [ Please input the path to model dir. ]
 ```
 
 To run on COCO_test-dev(You must be sure that you have downloaded test2017):
 ```Shell
-python eval_coco.py --train_model [ Please input the path to model dir. ] --cuda -t
+python eval.py -d coco-test --cuda -v [select a model] --train_model [ Please input the path to model dir. ]
 ```
 You will get a .json file which can be evaluated on COCO test server.
