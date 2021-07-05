@@ -27,23 +27,22 @@ My loss function and groundtruth creator both in the ```tools.py```, and you can
 Environment:
 
 - Python3.6, opencv-python, PyTorch1.1.0, CUDA10.0,cudnn7.5
-- For training: Intel i9-9940k, TITAN-RTX-24g
-- For inference: Intel i5-6300H, GTX-1060-3g
+- For training: Xeon(R) CPU E5-2630 v4, TITAN-RTX-24g
 
-VOC:
+VOC: yolo_140.pth
 <table><tbody>
 <tr><th align="left" bgcolor=#f8f8f8> </th>     <td bgcolor=white> size </td><td bgcolor=white> mAP </td><td bgcolor=white> FPS </td></tr>
-<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 320 </td><td bgcolor=white> 64.4 </td><td bgcolor=white> - </td></tr>
-<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 416 </td><td bgcolor=white> 68.5 </td><td bgcolor=white> - </td></tr>
-<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 608 </td><td bgcolor=white> 71.5 </td><td bgcolor=white> - </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 320 </td><td bgcolor=white> 64.5 </td><td bgcolor=white> - </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 416 </td><td bgcolor=white> 69.2 </td><td bgcolor=white> - </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> VOC07 test</th><td bgcolor=white> 608 </td><td bgcolor=white> 72.7 </td><td bgcolor=white> - </td></tr>
 </table></tbody>
 
-COCO:
+COCO: yolo_140.pth
 <table><tbody>
 <tr><th align="left" bgcolor=#f8f8f8> </th>     <td bgcolor=white> size </td><td bgcolor=white> AP </td><td bgcolor=white> AP50 </tr>
-<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 320 </td><td bgcolor=white> 14.50 </td><td bgcolor=white> 30.15 </td></tr>
-<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 416 </td><td bgcolor=white> 17.34 </td><td bgcolor=white> 35.28 </td></tr>
-<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 608 </td><td bgcolor=white> 19.90 </td><td bgcolor=white> 39.27 </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 320 </td><td bgcolor=white> 14.40 </td><td bgcolor=white> 30.0 </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 416 </td><td bgcolor=white> 16.9 </td><td bgcolor=white> 34.5 </td></tr>
+<tr><th align="left" bgcolor=#f8f8f8> COCO val</th><td bgcolor=white> 608 </td><td bgcolor=white> 19.70 </td><td bgcolor=white> 39.27 </td></tr>
 </table></tbody>
 
 ## Installation
